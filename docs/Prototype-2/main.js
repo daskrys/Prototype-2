@@ -2,7 +2,7 @@ title = "prototype-2";
 
 description = `
  Score as many baskets
- as possible within 30 secs
+ as possible within 1 min
 
 [Hold]    Change angle
 [Release] Shoot Ball
@@ -56,7 +56,7 @@ let space;
 let scr;
 let playerCollision;
 let thrown = false;
-let gameTime = 1500; // One minute
+let gameTime = 3000; // One minute
 
 const groundX = 0;
 const groundY = 90;
@@ -73,7 +73,7 @@ score = 0;
 var highScore = 0;
 
 function spawn() {
-    player = vec(20, 85);
+    player = vec(30, 85);
     thrown = false;
 }
 
@@ -85,7 +85,7 @@ function update() {
         // restart game
         gameOver = false;
         score = 0;
-        gameTime = 1500;
+        gameTime = 3000;
     }
     if (!gameOver) {
         if (!ticks) {
@@ -158,7 +158,7 @@ function update() {
         }
 
         // Draw the hoop
-        char("b", 180, hoopY);
+        char("b", 175, hoopY);
 
         onCollide();
     }
